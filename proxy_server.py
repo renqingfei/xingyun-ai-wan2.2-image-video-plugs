@@ -107,8 +107,8 @@ def _coerce_positive_int(value) -> int | None:
 
 
 def _workflow_path() -> str:
-    here = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(here, "万象2.2图生视频.json")
+    base_dir = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_dir, "万象2.2图生视频.json")
 
 
 def build_comfyui_workflow(
